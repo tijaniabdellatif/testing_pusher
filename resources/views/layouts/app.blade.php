@@ -127,7 +127,9 @@
       
          
             
-             <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-            <script src="{{asset('js/setup.js')}}"></script>         
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+            <script src="{{asset('js/setup.js')}}"></script>    
+            
+         
 </body>
 </html>

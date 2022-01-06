@@ -43,7 +43,7 @@
                     <form method="POST" class="forms" action="{{route('admin.categories.destroy',$category->id)}}">
                       @csrf
                       @method('delete')
-                      <input  type="submit" class="btn btn-outline-danger" />
+                      <input  type="submit" class="btn btn-outline-danger buttons" />
                     </form>
                 </td>
               </tr>

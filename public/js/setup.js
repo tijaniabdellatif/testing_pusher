@@ -1,15 +1,16 @@
-const forms = document.querySelectorAll('.forms');
+const buttons = document.querySelectorAll('.buttons');
 
 
-forms.forEach(element => {
+buttons.forEach(element => {
 
-    element.addEventListener('submit',(e) => {
+    element.addEventListener('click',(e) => {
 
 
-      
+       if(!confirm('Do you want to delete this item'))
+       e.preventDefault();
         
-        confirm('Do you want to delete this item');
-
+    
+        
     });
 
 });

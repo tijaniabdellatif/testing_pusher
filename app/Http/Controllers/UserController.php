@@ -10,7 +10,7 @@ class UserController extends Controller
     {
 
         $this->middleware('auth');
-        $this->middleware('user');
+        // $this->middleware('user');
     }
     /**
      * Display a listing of the resource.
