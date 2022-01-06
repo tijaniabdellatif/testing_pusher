@@ -110,4 +110,41 @@ class CategoryController extends Controller
         return redirect()->route('admin.categories.index')->with('delete', 'category deleted');
     }
 
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $category = Category::find($id);
+        $catWithProduct = $category->products;
+
+        return view("admin.categories.edit", compact('catWithProduct', 'category'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $category = Category::find($id);
+        $image = $category->category_image;
+
+        if ($request->file('image')) {
+
+            $image = $request->file('image')->store("public/files");
+
+            Storage::delete($image);
+        }
+
+        $category->category_name = $request->category_name;
+        $category->description = $request->description;
+        $category->slug = Str::slug($category->category_name);
+        $category->category_image = $image;
+
+        $category->save();
+
+        return redirect()->route('admin.categories.index')->with('update', 'Category updated successully');
+
+    }
+
 }

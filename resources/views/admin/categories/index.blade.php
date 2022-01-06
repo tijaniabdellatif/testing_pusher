@@ -38,7 +38,7 @@
                     <a class="btn btn-primary" href="{{route('admin.categories.show',$category->id)}}">
                      Details
                     </a>
-                    <a href="#" class="btn btn-warning">Edit</a>
+                    <a href="{{route('admin.categories.edit',[$category->id,$category->slug])}}" class="btn btn-warning">Edit</a>
                    
                     <form method="POST" class="forms" action="{{route('admin.categories.destroy',$category->id)}}">
                       @csrf

@@ -111,6 +111,13 @@
                                     Create Categories
                                   </a>
                                 </li>
+
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">
+                                    <span data-feather="file"></span>
+                                    Products
+                                  </a>
+                                </li>
                             
                               </ul>
                       

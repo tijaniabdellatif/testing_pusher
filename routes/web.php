@@ -33,6 +33,8 @@ Route::prefix('admin')->middleware('admin')->group(function () {
         Route::get('/create', [CategoryController::class, 'create'])->name('admin.categories.create');
         Route::post('/store', [CategoryController::class, 'store'])->name('admin.categories.store');
         Route::get('/{id}', [CategoryController::class, 'show'])->name('admin.categories.show');
+        Route::get('/edit/{id}/{slug}', [CategoryController::class, 'edit'])->name('admin.categories.edit');
+        Route::put('/update/{id}', [CategoryController::class, 'update'])->name('admin.categories.update');
         Route::delete('/{slug}', [CategoryController::class, 'destroy'])->name('admin.categories.destroy');
     });
 
